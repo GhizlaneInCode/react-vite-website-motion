@@ -89,7 +89,7 @@ const About = () => {
             </motion.div>
             <div className="imageContainer">
                 {/* <img src="/hero.png" alt="" /> */}
-                <img src="/myPic3-removebg-preview (2).png" alt="" />
+                <img src="./myPic3-removebg-preview (2).png" alt="" />
             </div>
         </div>
     );
