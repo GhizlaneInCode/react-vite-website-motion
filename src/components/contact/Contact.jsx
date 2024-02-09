@@ -26,6 +26,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
 
 
@@ -34,7 +35,7 @@ const Contact = () => {
   const sendEmailFunction = async (e) => {
     e.preventDefault();
 
-
+    setIsSending(true);
 
     await fetch("https://formsubmit.co/ajax/897b014b673d1192a1039dce10650abd", {
       method: "POST",
@@ -74,6 +75,7 @@ const Contact = () => {
           theme: "light",
         })
 
+      ).finally(() => setIsSending(false)
       );
 
     setName("");
@@ -167,7 +169,7 @@ const Contact = () => {
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_subject" value="New Message!! From your portfolio website" />
 
-          <button type="submit">Send</button>
+          <button type="submit" disabled={isSending}>{isSending ? "Sending..." : "Send"}</button>
         </motion.form>
 
 
