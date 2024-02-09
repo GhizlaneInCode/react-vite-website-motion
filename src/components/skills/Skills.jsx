@@ -47,7 +47,7 @@ const Skills = () => {
                     initial="initial"
                     animate="animate"
                 >
-                    <img src="/logos1.png" alt="" />
+                    <img src="./logos1.png" alt="" />
                 </motion.div>
 
                 <motion.div className="content" variants={textVariants}
