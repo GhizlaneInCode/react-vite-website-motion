@@ -48,6 +48,7 @@ const Contact = () => {
         email: email,
         message: message,
         _template: "table",
+        _captcha: false
       })
     })
       .then(response => response.json())
@@ -64,7 +65,7 @@ const Contact = () => {
         })
       )
       .catch(error =>
-        toast.error("Somthing went wrong" + error.message, {
+        toast.error("Somthing went wrong " + error.message, {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,

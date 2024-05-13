@@ -1,5 +1,7 @@
 import "./skills.scss";
 import { motion } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
+
 
 const textVariants = {
     initial: {
@@ -31,6 +33,13 @@ const sliderVariants = {
 };
 
 const Skills = () => {
+
+    const [ref, inView] = useInView({
+        threshold: 0.2,
+    });
+
+    const animatedVariants = inView ? textVariants.animate : textVariants.initial;
+
     return (
         <div className="skills">
             <div className="title">
@@ -44,15 +53,17 @@ const Skills = () => {
                 <motion.div
                     className="imageContainer"
                     variants={textVariants}
+                    ref={ref}
                     initial="initial"
-                    animate="animate"
+                    animate={animatedVariants}
                 >
                     <img src="./logos1.png" alt="" />
                 </motion.div>
 
                 <motion.div className="content" variants={textVariants}
+                 ref={ref}
                     initial="initial"
-                    animate="animate">
+                    animate={animatedVariants}>
 
                     <div className="progressContainer">
                         <h4>Machine Learning<small>60%</small></h4>

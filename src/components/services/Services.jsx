@@ -1,7 +1,9 @@
 import { useRef } from "react";
 import "./services.scss";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { SlScreenDesktop, SlLayers, SlScreenSmartphone, SlScreenTablet, SlBadge, SlEarphonesAlt, } from "react-icons/sl";
+import { useInView } from 'react-intersection-observer';
+
 
 const MyIcon = () => {
   const ref = useRef();
@@ -13,7 +15,6 @@ const MyIcon = () => {
         <stop stopColor="#f322be" offset="70%" />
         <stop stopColor="#13deee" offset="100%" />
       </linearGradient>
-      {/* Include your icon paths or shapes here */}
     </svg>
   );
 };
@@ -38,29 +39,35 @@ const variants = {
 };
 
 const Services = () => {
-  const ref = useRef();
+  const [ref, inView] = useInView({
+    threshold: 0.2, 
+  });
 
-  const isInView = useInView(ref, { margin: "-100px" });
+  const animatedVariants = inView ? variants.animate : variants.initial;
+
+  
 
   return (
     <motion.div
       className="services"
       variants={variants}
-      initial="initial"
-      // animate="animate"
-      // whileInView="animate"
       ref={ref}
-      animate={"animate"}
+      initial="initial"
+      animate={animatedVariants}
     >
 
-      <motion.div className="textContainer" variants={variants}>
+      <motion.div className="textContainer" variants={variants}  ref={ref}
+      initial="initial"
+      animate={animatedVariants}>
         <p>
           I focus on helping your brand grow
           <br /> and move forward
         </p>
         <hr />
       </motion.div>
-      <motion.div className="titleContainer" variants={variants}>
+      <motion.div className="titleContainer" variants={variants}  ref={ref}
+      initial="initial"
+      animate={animatedVariants}>
         <div className="title">
           <img src="./people.webp" alt="" />
           <h1>
@@ -74,7 +81,9 @@ const Services = () => {
           <button>WHAT WE DO ?</button>
         </div>
       </motion.div>
-      <motion.div className="listContainer" variants={variants}>
+      <motion.div className="listContainer" variants={variants}  ref={ref}
+      initial="initial"
+      animate={animatedVariants}>
         <motion.div
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}
