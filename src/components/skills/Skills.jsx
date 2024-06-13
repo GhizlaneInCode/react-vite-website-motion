@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 const textVariants = {
     initial: {
-        x: -500,
+        x: -100,
         opacity: 0,
     },
     animate: {

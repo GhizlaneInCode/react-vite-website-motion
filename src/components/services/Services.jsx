@@ -23,7 +23,7 @@ const MyIcon = () => {
 
 const variants = {
   initial: {
-    x: -500,
+    x: -150,
     y: 100,
     opacity: 0,
   },
@@ -40,7 +40,7 @@ const variants = {
 
 const Services = () => {
   const [ref, inView] = useInView({
-    threshold: 0.2, 
+    // threshold: 0.2, 
   });
 
   const animatedVariants = inView ? variants.animate : variants.initial;
@@ -65,9 +65,11 @@ const Services = () => {
         </p>
         <hr />
       </motion.div>
-      <motion.div className="titleContainer" variants={variants}  ref={ref}
+      <motion.div className="titleContainer"
+      // variants={variants}  ref={ref}
       initial="initial"
-      animate={animatedVariants}>
+      //animate={animatedVariants}
+      >
         <div className="title">
           <img src="./people.webp" alt="" />
           <h1>
