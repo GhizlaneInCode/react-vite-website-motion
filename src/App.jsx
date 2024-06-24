@@ -8,6 +8,9 @@ import Parallax from "./components/parallax/Parallax";
 import Portfolio from "./components/portfolio/Portfolio";
 import Services from "./components/services/Services";
 import Skills from "./components/skills/Skills";
+import PopUp from "./components/portfolio/popUp/PopUp";
+
+
 
 const App = () => {
   return (
@@ -36,6 +39,8 @@ const App = () => {
       <section id="Contact">
         <Contact />
       </section>
+
+      
 
     </div>
   );
