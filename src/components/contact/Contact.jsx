@@ -121,7 +121,7 @@ const Contact = () => {
           </motion.div>
           <motion.div className="info">
             <h2><span>Phone</span></h2>
-            <h4>06 36 15 97 27</h4>
+            <h4>Available upon request</h4>
           </motion.div>
         </motion.div>
       </motion.div>
