@@ -7,9 +7,9 @@ const Navbar = () => {
     <div className="navbar">
       <Sidebar />
       <div className="wrapper">
-        <img className="logo" src="./logo-complet-rb.png" alt="" />
+        {/* <img className="logo" src="./logo-complet-rb.png" alt="" /> */}
         <div className="social">
-          <a href="#">
+          <a href="https://www.linkedin.com/in/el-karroumi-ghizlane/">
             <img src="./linkedin.png" alt="" />
             <p>LinkedIn</p>
           </a>

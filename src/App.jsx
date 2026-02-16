@@ -9,6 +9,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Services from "./components/services/Services";
 import Skills from "./components/skills/Skills";
 import PopUp from "./components/portfolio/popUp/PopUp";
+import Techs from "./components/skills/techs";
 
 
 
@@ -31,6 +32,9 @@ const App = () => {
       </section>
       <section id="Skills">
         <Skills />
+      </section>
+      <section id="Techs">
+        <Techs />
       </section>
       <section id="Portfolio">
         <Parallax type="portfolio" />

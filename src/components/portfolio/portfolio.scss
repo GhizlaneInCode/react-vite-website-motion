@@ -44,6 +44,11 @@
       gap: 50px;
       margin-top: 40px;
 
+      @include smallDesktop {
+        width: 95%;
+
+        }
+
       @include mobile {
         flex-direction: column;
         padding: 25px;
@@ -60,6 +65,10 @@
       .imageContainer {
         flex: 1;
         height: 50%;
+
+        @include smallDesktop {
+        height: auto;
+        }
 
         @include mobile {
           width: 100%;

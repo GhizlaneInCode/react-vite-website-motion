@@ -57,6 +57,10 @@
     flex-direction: column;
     align-items: center;
 
+    @include smallDesktop {
+      flex: 0;
+    }
+
     @include mobile {
       width: 100%;
     }

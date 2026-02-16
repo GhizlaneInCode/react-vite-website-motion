@@ -97,6 +97,9 @@
       right: 0;
       border: none;
 
+      @include smallDesktop {
+        top: 0;
+      }
 
       @include mobile {
         display: none;

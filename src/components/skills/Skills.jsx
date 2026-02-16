@@ -43,7 +43,7 @@ const Skills = () => {
     return (
         <div className="skills">
             <div className="title">
-                <h1><span>Our</span> Skills</h1>
+                <h1><span>My</span> Skills</h1>
                 <motion.div className="blurEffect"></motion.div>
 
             </div>
@@ -61,7 +61,7 @@ const Skills = () => {
                 </motion.div>
 
                 <motion.div className="content" variants={textVariants}
-                 ref={ref}
+                ref={ref}
                     initial="initial"
                     animate={animatedVariants}>
 
@@ -86,15 +86,11 @@ const Skills = () => {
                         <progress id='p1' value='95' max='100'></progress>
                     </div>
                 </motion.div>
+    
             </div>
-            {/* <motion.div
-                className="slidingTextContainer"
-                variants={sliderVariants}
-                initial="initial"
-                animate="animate"
-            >
-                Writer Content Creator Influencer
-            </motion.div> */}
+
+        
+            
 
         </div>
     );

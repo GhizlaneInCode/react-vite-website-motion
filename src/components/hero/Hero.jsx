@@ -77,7 +77,6 @@ const Hero = () => {
       </motion.div>
       <div className="iframeContainer">
         {/* <img src="/hero.png" alt="" /> */}
-        {/* <img src="/myPic3-removebg-preview (2).png" alt="" /> */}
         <iframe src='https://my.spline.design/daccord-33290d987400c47285f7e451f9e9029b/' width='100%' height='100%'></iframe>
         {/* <iframe class="responsive-iframe" src='https://my.spline.design/daccord-33290d987400c47285f7e451f9e9029b/'></iframe> */}
 

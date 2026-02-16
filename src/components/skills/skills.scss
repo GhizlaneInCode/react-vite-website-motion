@@ -16,6 +16,7 @@ $b: 2.4px;
     height: 100vh;
     overflow: hidden;
     background: linear-gradient(180deg, #111132, #0c0c1d);
+    // border: 1px solid red;
 
     .title {
         position: sticky;
@@ -37,7 +38,7 @@ $b: 2.4px;
             width: 100px;
             background-color: #7f77d7;
             border-radius: 50px;
-            filter: blur(80px);
+            filter: blur(60px);
             position: absolute;
             top: 40px;
             left: 50px;
@@ -53,6 +54,8 @@ $b: 2.4px;
         align-items: center;
         gap: 100px;
         flex-wrap: wrap;
+        // border: 1px solid yellow;
+
 
         @include tablet {
             gap: 0px;
@@ -66,6 +69,8 @@ $b: 2.4px;
             grid-gap: 25px;
             place-content: center;
             margin: 0;
+            // border: 1px solid green;
+
 
             .progressContainer {
                 display: flex;
@@ -117,6 +122,8 @@ $b: 2.4px;
             width: 100%;
             max-width: clamp(300px, 40%, 500px);
             height: auto;
+            // border: 1px solid blue;
+
 
             @include mobile {
                 // max-width: 300px;
@@ -133,5 +140,9 @@ $b: 2.4px;
         }
 
     }
+
+   
+
+    
 
 }

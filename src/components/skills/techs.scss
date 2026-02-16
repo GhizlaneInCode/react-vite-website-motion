@@ -1,0 +1,181 @@
+
+@import "../../app.scss";
+
+.tech-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    // border: 5px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+
+    .title {
+        position: sticky;
+        padding-top: 50px;
+        text-align: center;
+        color: #fff;
+        font-size: 35px;
+        max-width: 500px;
+        margin: 0 auto;
+
+        @include mobile {
+            font-size: 20px;
+            padding-top: 8px;
+
+        }
+
+        .blurEffect {
+            height: 100px;
+            width: 100px;
+            background-color: #7f77d7;
+            border-radius: 50px;
+            filter: blur(60px);
+            position: absolute;
+            top: 15px;
+            right: 5px;
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        // border: 1px solid green;
+        overflow: hidden;
+        padding-block: 20px; // ✅ NEW padding for better spacing
+
+        .scrolling-list1 {
+            width: max-content; 
+            display: flex;
+            gap: 6px; 
+            animation: scroll-x 120s linear infinite;
+        }
+
+        .scrolling-list2 {
+            width: max-content; // ✅ NEW
+            display: flex;
+            gap: 6px; // ✅ NEW
+            animation: opositScroll-x 110s linear infinite;
+        }
+
+        .scrolling-list3 {
+            width: max-content; 
+            display: flex;
+            gap: 6px; 
+            animation: scroll-x 100s linear infinite;
+        }
+
+        .scrolling-list1:hover,
+        .scrolling-list2:hover,
+        .scrolling-list3:hover {
+            animation-play-state: paused; // ✅ NEW pause on hover
+        }
+
+        .tech-item {
+            flex: 0 0 auto; // ✅ keep width fixed
+            min-width: 180px; // ✅ NEW consistent sizing for each item
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 5px 15px; // ✅ better padding
+            margin: 5px;
+            border: 1px solid rgb(157, 166, 227);
+            border-radius: 50px;
+            box-shadow: 0 0 10px rgba(182, 179, 211, 0.5);
+            background: rgba(0, 0, 0, 0.3); // ✅ NEW optional subtle background
+
+
+            img {
+                height: 25px; // ✅ bigger icons for balance
+                width: 25px;
+                object-fit: contain;
+                aspect-ratio: 1/1;
+            }
+
+            p {
+                font-size: 14px; // ✅ slightly larger font
+                color: #fff;
+                white-space: nowrap; // ✅ prevent text wrapping
+            }
+        }
+
+        .tech-item:hover {
+                background: rgba(0, 0, 0, 0.5); // ✅ NEW darker on hover
+                box-shadow: 0 0 20px rgba(162, 129, 211, 0.7); // ✅ NEW stronger shadow on hover
+            }
+
+                 // Responsive tweaks
+        @include mobile {
+            gap: 8px;
+            padding-block: 12px;
+
+            .scrolling-list1,
+            .scrolling-list2,
+            .scrolling-list3 {
+                gap: 8px;
+                /* faster on small screens so motion feels continuous */
+                animation-duration: 60s; 
+            }
+            .scrolling-list2 { animation-duration: 55s; }
+            .scrolling-list3 { animation-duration: 50s; }
+
+            .tech-item {
+                min-width: 120px;
+                height: 44px;
+                padding: 4px 10px;
+                margin: 4px;
+
+                img {
+                    height: 20px;
+                    width: 20px;
+                }
+
+                /* hide labels on very small screens to avoid wrapping */
+                p {
+                    display: none;
+                }
+            }
+        }
+
+        // Fallback media queries (if mixin missing or for intermediate sizes)
+        @media (max-width: 1024px) {
+            .tech-item { min-width: 140px; height: 46px; }
+            .scrolling-list1, .scrolling-list2, .scrolling-list3 { animation-duration: 90s; }
+            .scrolling-list2 { animation-duration: 85s; }
+            .scrolling-list3 { animation-duration: 80s; }
+        }
+
+        @media (max-width: 480px) {
+            .tech-item { min-width: 100px; height: 40px; padding: 3px 8px; }
+            .scrolling-list1, .scrolling-list2, .scrolling-list3 { animation-duration: 50s !important; }
+            .tech-item p { display: none; }
+        }
+    }
+}
+
+
+@keyframes scroll-x {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes opositScroll-x {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
